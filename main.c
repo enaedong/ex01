@@ -7,12 +7,12 @@ int main(int argc, char *argv[]) {
     return EXIT_FAILURE;
   }
 
-  // FIXME: allow floating point numbers!
-  int lhs = atoi(argv[1]);
+  // Now supports floating point numbers!
+  double lhs = atof(argv[1]);
   char op = argv[2][0];
-  int rhs = atoi(argv[3]);
+  double rhs = atof(argv[3]);
 
-  int result;
+  double result;
   switch (op) {
   case '+':
     result = lhs + rhs;
@@ -33,6 +33,6 @@ int main(int argc, char *argv[]) {
     return EXIT_FAILURE;
   }
 
-  (void)printf("%d %c %d = %d\n", lhs, op, rhs, result);
+  (void)printf("%.2f %c %.2f = %.2f\n", lhs, op, rhs, result);
   return EXIT_SUCCESS;
 }
